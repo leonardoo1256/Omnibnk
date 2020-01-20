@@ -26,23 +26,28 @@ def createmovie(request):
 
 
 def delete(request, id):
-    item = get_object_or_404(Movie, id=id)
-    if request.method == "POST":
-        item.delete()
-    context = {
-        "object": item
-    }
-    return render(request, "delete_movie.html", context)
-
+    if request.user.is_authenticated:
+        item = get_object_or_404(Movie, id=id)
+        if request.method == "POST":
+            item.delete()
+        context = {
+            "object": item
+        }
+        return render(request, "delete_movie.html", context)
+    else:
+        return HttpResponseNotFound(status=status.HTTP_401_UNAUTHORIZED)
 
 def update(request, id):
-    item = get_object_or_404(Movie, id=id)
-    if request.method == "PATCH":
-        item.save()
-    context = {
-        "object": item
-    }
-    return render(request, "update_movie.html", context)
+    if request.user.is_authenticated:
+        item = get_object_or_404(Movie, id=id)
+        if request.method == "PATCH":
+            item.save()
+        context = {
+            "object": item
+        }
+        return render(request, "update_movie.html", context)
+    else:
+        return HttpResponseNotFound(status=status.HTTP_401_UNAUTHORIZED)
 
 
 class MovieViewSets(viewsets.ModelViewSet):

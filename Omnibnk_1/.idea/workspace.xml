@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b4f4f1c-701e-47f4-9a73-b458f239dcfe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Omnibnk_1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Omnibnk_1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Omnibnk_1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Omnibnk_1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/images/movie-icon-png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/templates/registration/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/api/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/static/js/create-movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/static/js/create-movie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/static/js/delete-movie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/static/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/static/js/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/create_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/create_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/delete_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/delete_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/movies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/templates/update_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/api/templates/update_movie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

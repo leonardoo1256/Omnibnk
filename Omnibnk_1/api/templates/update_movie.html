@@ -17,10 +17,10 @@
             <a class="navbar-brand" href="/movies">Movies</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/createmovie">Create Movie</a></li>
+            <li><a href="/createmovie">Create Movie</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+            <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
         </ul>
     </div>
 </nav>
@@ -48,7 +48,7 @@
                                     </div>
                             <div style="margin-top:10px" class="form-group">
                                    <div class="col-sm-12 controls">
-                                      <a id="btn-login" onclick="Update({{ object.id }});" class="btn btn-success">Update</a>
+                                      <a id="btn-login" onclick="Update({{ object.id }});window.location='/movies';" class="btn btn-success">Update</a>
                                       <button type="button" onclick="window.location='/movies';" class="btn btn-danger">Cancel</button>
                                     </div>
                                 </div>

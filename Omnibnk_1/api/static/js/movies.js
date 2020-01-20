@@ -12,13 +12,13 @@ $(document).ready(function(){
 
 var id;
 function deletemovie(id){
-    del_url = './movie/' + id.toString() + '/delete/';
-    $(location).attr('href', del_url);
+    del_url = '/movie/' + id.toString() + '/delete/';
+    window.location.replace(del_url);
 }
 
 function update(id){
-    up_url = './movie/' + id.toString() + '/update/';
-    $(location).attr('href', up_url);
+    up_url = '/movie/' + id.toString() + '/update/';
+    window.location.replace(up_url);
 }
 
 function onlyone(id){
@@ -29,3 +29,4 @@ function onlyone(id){
         moviedetail.innerText = "Movie title: "+data.name + "\nGenre: "+data.genre + "\nDirector: " +data.director
     });
 };
+

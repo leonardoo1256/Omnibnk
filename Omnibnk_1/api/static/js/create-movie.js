@@ -10,7 +10,7 @@ function Create() {
         datatype: "json",
         success: function(data) {
                 alert('Movie created successfully');
-                $(location).attr('href', './movies')
+                $(location).attr('href', 'accounts/login/movies')
         },
         error: function (errMsg) {
             alert('Try another movie title');
@@ -33,12 +33,8 @@ function Update(id) {
         datatype: "json",
         success: function(data) {
                 alert('Movie updated');
-                window.location.replace("/movies");
         },
         error: function (errMsg) {
-            console.log(genre);
-            console.log(director);
-            console.log(movietitle);
             alert('Try another movie title');
                 $('#author').val('');
                 $('#director').val('');
@@ -47,4 +43,6 @@ function Update(id) {
     });
 }
 
-
+function button_block(){
+    document.getElementById("deletebutton").disabled = true;
+}

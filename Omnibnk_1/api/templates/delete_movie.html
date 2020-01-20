@@ -20,7 +20,7 @@
             <li><a href="/createmovie">Create Movie</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+            <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
         </ul>
     </div>
 </nav>
@@ -31,8 +31,9 @@
     {% csrf_token %}
     <h1>Do you want to delete {{ object.name }} ?</h1>
     <div>
-        <input type="submit" class="btn btn-danger" onclick="window.location='/movies';" value="Delete">
-        <button type="button" onclick="window.location='/movies';" class="btn btn-info">Cancel</button>
+        <p>After press delete press "Go to movies"</p>
+        <input type="submit" class="btn btn-danger"  id="deletebutton" value="Delete">
+        <button type="button" onclick="window.location='/accounts/login/movies';" class="btn btn-info">Go to movies</button>
     </div>
 </form>
         </div>
