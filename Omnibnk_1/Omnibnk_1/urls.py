@@ -13,22 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from api.api import UserApi
-from api import views
 from django.conf.urls import url, include
-from api.router import router
-from django.contrib.auth.views import LoginView
-#from rest_framework.authtoken import views
+from django.contrib import admin
+from django.contrib.auth.views import LoginView, logout_then_login
+from django.urls import path
 
+from api import views
+from api.router import router
 
 urlpatterns = [
+
+    url('createuser', views.newuser),
+    url('movies', views.movies),
+    url('createmovie', views.createmovie),
     path('admin/', admin.site.urls),
-    #path('login/', LoginView.as_view(template_name='registration/login.html'), name="login"),
-    path('api/authenticate', views.Login.as_view(), name="auth"),
     path('api/', include(router.urls)),
-    #re_path(r'^api/movie/$',views.MovieList.as_view(), name = 'movie'),
-    #re_path(r'^api/movie/(?P<pk>[0-9]+)/$', views.MovieDetail.as_view(), name = 'movies')
+    path('movie/<int:id>/delete/', views.delete, name="delete"),
+    path('movie/<int:id>/update/', views.update, name="update"),
+    path("accounts/login/", LoginView.as_view(), name="login"),
+    path("logout/", logout_then_login, name='logout'),
+    url('newuser', views.Newuser.as_view())
 
 ]

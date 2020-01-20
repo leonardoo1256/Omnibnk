@@ -1,16 +1,13 @@
 from django.db import models
 
+
 class Movie(models.Model):
-    name = models.CharField(max_length=100, blank=False)
+    name = models.CharField(max_length=100, unique= True, blank=False)
     genre = models.CharField(max_length=100, blank=False)
     director = models.CharField(max_length=100, blank=False)
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('id',)
+        default_permissions = ('add','change','delete','view')
 
-class User(models.Model):
-    username = models.CharField(max_length=100, blank=False)
-    password = models.CharField(max_length=100, blank=False)
 
-    class Meta:
-        ordering = ('username',)

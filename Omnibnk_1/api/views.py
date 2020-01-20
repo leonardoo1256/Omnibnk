@@ -1,38 +1,63 @@
-from django.shortcuts import render
-from api.models import Movie, User
-from api.serializers import MovieSerializer, UserSerializer
-from rest_framework import generics
-from django.contrib.auth import authenticate, login as auth_login
-from django.http import HttpResponseRedirect, Http404
-from django.contrib import messages
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from django.contrib.auth.models import User
+from django.http import HttpResponseNotFound
+from django.shortcuts import render, get_object_or_404
 from rest_framework import status, viewsets
+from rest_framework.views import APIView
+from api.models import Movie
+from api.serializers import MovieSerializer
 
 
-class Login(APIView):
-    def post(self, request):
-        data = request.data
-        try:
-            username = data['username']
-            password = data['password']
-            if len(User.objects.all().filter(username=username).filter(password= None).values()) > 0:
-                return Response(data='yes', status=status.HTTP_200_OK)
-            else:
-                return Response(status=status.HTTP_404_NOT_FOUND)
-        except:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+def newuser(request):
+    return render(request, 'create_user.html')
 
 
-class UserViewSets(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+def movies(request):
+    if request.user.is_authenticated:
+        return render(request, 'movies.html')
+    else:
+        return HttpResponseNotFound(status=status.HTTP_401_UNAUTHORIZED)
+
+
+def createmovie(request):
+    if request.user.is_authenticated:
+        return render(request, 'create_movie.html')
+    else:
+        return HttpResponseNotFound(status=status.HTTP_401_UNAUTHORIZED)
+
+
+def delete(request, id):
+    item = get_object_or_404(Movie, id=id)
+    if request.method == "POST":
+        item.delete()
+    context = {
+        "object": item
+    }
+    return render(request, "delete_movie.html", context)
+
+
+def update(request, id):
+    item = get_object_or_404(Movie, id=id)
+    if request.method == "PATCH":
+        item.save()
+    context = {
+        "object": item
+    }
+    return render(request, "update_movie.html", context)
 
 
 class MovieViewSets(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-#    def retrieve(self, request, *args, **kwargs):
- #       if len(request.data) > 0:
 
 
+class Newuser(APIView):
+    def post(self, request):
+        data = request.data
+        username = data['username']
+        password = data['password']
+        try:
+            user = User.objects.create_user(username, username + "@gmail.com", password)
+            user.save()
+            return render(request, 'registration/login.html')
+        except:
+            return render(request, 'create_user.html')
