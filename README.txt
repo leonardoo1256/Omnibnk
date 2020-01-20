@@ -34,3 +34,10 @@ Requerimientos cumplidos:
 9. A User should be able to UPDATE a Movie from the Application
 10. A User should be able to DELETE a Movie in the Application
 
+URL's:
+http://127.0.0.1:8000/accounts/login/
+http://127.0.0.1:8000/createuser
+http://127.0.0.1:8000/accounts/login/movies
+http://127.0.0.1:8000/createmovie
+http://127.0.0.1:8000/movie/#id/delete/
+http://127.0.0.1:8000/movie/#id/update/
