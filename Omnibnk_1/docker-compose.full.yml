@@ -12,18 +12,18 @@ services:
     ports:
       - "5432:5432"
 
-    django:
-      build: .
-      command: python manage.py runserver 0.0.0.0:8000
-      volumes:
-        - .:/code
-      ports:
-        - "8000:8000"
-      environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=prueba-db
-      depends_on:
-        - prueba-db        
+  django:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=prueba-db
+    depends_on:
+      - prueba-db        
 volumes:
   prueba_db_postgres_data:
