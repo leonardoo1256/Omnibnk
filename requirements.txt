@@ -1,4 +1,4 @@
 django
 djangorestframework
 django-filter
-pyscopg2-binary
+psycopg2-binary
