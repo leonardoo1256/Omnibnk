@@ -16,13 +16,13 @@ Including another URLconf
 #from django.conf.urls import url, include
 from django.urls import path, include
 from django.contrib import admin
-from django.contrib.auth.views import LoginView, logout_then_login, MovieViewSets
+from django.contrib.auth.views import LoginView, logout_then_login
 
 from api import views
 from api.router import router
 
 router = SimpleRouter()
-router.register(r'moviees', MovieViewSets)
+router.register(r'moviees', views.MovieViewSets)
 
 urlpatterns = [
 
