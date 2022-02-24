@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, logout_then_login
+from rest_framework.routers import SimpleRouter
 
 from api import views
 from api.router import router
