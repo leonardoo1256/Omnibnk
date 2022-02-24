@@ -5,6 +5,7 @@ from rest_framework import status, viewsets
 from rest_framework.views import APIView
 from api.models import Movie
 from api.serializers import MovieSerializer
+from django_filters.rest_framework import DjandoFilterBackend
 
 
 def newuser(request):
@@ -53,6 +54,8 @@ def update(request, id):
 class MovieViewSets(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+    http_method_names = ['get',]
+    filter_backends = [DjandoFilterBackend,]
 
 
 class Newuser(APIView):
