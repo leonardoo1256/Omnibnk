@@ -22,8 +22,8 @@ from rest_framework.routers import SimpleRouter
 from api import views
 from api.router import router
 
-router = SimpleRouter()
-router.register(r'moviees', views.MovieViewSets)
+#router = SimpleRouter()
+#router.register(r'moviees', views.MovieViewSets)
 
 urlpatterns = [
 
