@@ -3,4 +3,5 @@ from api.models import *
 # Register your models here.
 
 admin.site.register(Movie)
+admin.site.register(TvShow)
 
