@@ -12,7 +12,7 @@ function Authenticate() {
         success: function(data) {
             if (data == "Login exitoso") {
                 alert('Correcto');
-                $(location).attr('href', '/movies')
+                $(location).attr('href', './movies')
             }
             else {
             console.log('Error');
