@@ -54,7 +54,7 @@ def update(request, id):
 class MovieViewSets(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    http_method_names = ['get',]
+    http_method_names = ['get','post','patch','delete']
     filter_backends = [DjangoFilterBackend,]
 
 
