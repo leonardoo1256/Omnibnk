@@ -29,6 +29,7 @@ urlpatterns = [
 
     path('createuser', views.newuser),
     path('accounts/login/movies', views.movies),
+    path('movies', views.movies),
     path('createmovie', views.createmovie),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
